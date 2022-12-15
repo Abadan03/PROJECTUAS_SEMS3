@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Maven+Pro&family=Questrial&display=swap');
+:root{
+  --blue:#0b688d;
+}
+
+*{
+  font-family: 'Questrial', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  outline: none; border:none;
+  text-decoration: none;
+  transition: all .2s linear;
+}
+
+*::selection{
+  background:var(--orange);
+  color:#fff;
+}
+.btn{
+  display: inline-block;
+  margin-top: 1rem;
+  background:var(--blue);
+  color:#fff;
+  padding:.8rem 3rem;
+  border:.2rem solid var(--blue);
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 6rem;
+  scroll-behavior: smooth;
+}
+.heading{
+  text-align: center;
+  padding:2.5rem 0;
+  margin-top: 55px;
+  margin-bottom: 55px;
+}
+.heading span{
+  font-size: 3.5rem;
+  background:rgba(4, 43, 61, 0.2);
+  color:var(--blue);
+  border-radius: .5rem;
+  padding:.2rem 1rem;
+}
+
+.heading span.space{
+  background:none;
+}
+section{
+  padding:2rem 9%;
+}
+
+.book .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    align-items: center;
+    /* margin-top: 75px; */
+  }
+  
+  .book .row .image{
+    flex:1 1 40rem;
+  }
+  
+  .book .row .image img{
+    width:90%;
+  }
+  
+  .book .row form{
+    flex:1 1 40rem;
+    padding:2rem;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+  }
+  
+  .book .row form .inputBox{
+    padding:.5rem 0;
+  }
+  
+  .book .row form .inputBox input{
+    width:100%;
+    padding:1rem;
+    border:.1rem solid rgba(0,0,0,.1);
+    font-size: 1.7rem;
+    color:#333;
+    text-transform: none;
+  }
+  
+  .book .row form .inputBox h3{
+    font-size: 2rem;
+    padding:1rem 0;
+    color:#666;
+  }
