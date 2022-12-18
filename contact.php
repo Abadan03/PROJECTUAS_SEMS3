@@ -1,3 +1,16 @@
+<?php
+include './controllers/config.php';
+if(!empty($_SESSION["id"])){
+    $id = $_SESSION["id"];
+    $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE id = '$id'");
+    $row = mysqli_fetch_assoc($result);
+    $_SESSION['username'] = $row['username'];
+}
+else {
+    header("Location: login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,8 +26,6 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
-
-
 </head>
 
 <body>
@@ -29,9 +40,9 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="packages.html">Packages</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.php" class="active">Home</a></li>
+                    <li><a href="packages.php">Packages</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </nav>
         </header>

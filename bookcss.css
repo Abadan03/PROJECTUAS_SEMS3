@@ -17,6 +17,44 @@
   background:var(--orange);
   color:#fff;
 }
+/* .nav-container {
+  position: sticky;
+  font-size: 1.8rem;
+  z-index: 100;
+  border-radius: .5rem;
+}
+
+.nav-container .logo img {
+  width: 50px;
+  padding-top: 0px;
+}
+
+.nav-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-container li a {
+  display: block;
+  color: white;
+  padding: 0 1.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  height: 60px;
+  line-height: 60px;
+}
+.nav-container li a:hover {
+  color: var(--main-color);
+  transition: all 0.3s;
+  border-bottom: 5px solid var(--main-color);
+} */
+
+/* .nav-container header label, #hamburger { 
+  display: none;
+} */
+
 .btn{
   display: inline-block;
   margin-top: 1rem;
@@ -54,6 +92,27 @@ html{
 section{
   padding:2rem 9%;
 }
+
+/* .passengers {
+  display: flex !important;
+  flex-wrap: wrap;
+} */
+
+/* .psg {
+  display: fl;
+} */
+
+
+
+/* .bg-psg label {
+  font-size: 30px !important;
+} */
+
+/* .bg-psg {
+  background-color: wheat;
+  margin-bottom: 8px;
+  width: 100px !important;
+} */
 
 .book .row{
     display: flex;

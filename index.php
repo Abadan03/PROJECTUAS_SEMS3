@@ -1,3 +1,16 @@
+<?php
+include './controllers/config.php';
+if(!empty($_SESSION["id"])){
+    $id = $_SESSION["id"];
+    $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE id = '$id'");
+    $row = mysqli_fetch_assoc($result);
+    $_SESSION['username'] = $row['username'];
+}
+else {
+    header("Location: login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,16 +38,26 @@
             <label for="hamburger">&#9776;</label>
             <input type="checkbox" id="hamburger" />
             <div class="logo">
-                <img src="images/citravel.PNG" alt="Logo">
+                <h3>Hello!</h3>
+                <?php
+                if($id = $_SESSION["id"]) {
+                    echo $_SESSION['username'];
+                }else {
+                    echo "<p style='display:hidden;'>tet tot</p>";
+                }
+                ?>
             </div>
             <nav>
                 <ul>
                     <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="packages.php">Packages</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#review">Review</a></li>
                     <li><a href="#aboutus">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="booking.php">Booking</a></li>
+                    <li><a href="login.php">Login</a></li>
+                    <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
         </header>
@@ -49,7 +72,7 @@
         <div class="content">
             <h3>Let's Sail Away With Us !</h3>
             <p>
-                <a href="booking.html" class="tombol">BOOK NOW</a>
+                <a href="booking.php" class="tombol">BOOK NOW</a>
             </p>
         </div>
 
