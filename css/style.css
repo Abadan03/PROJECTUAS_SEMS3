@@ -689,9 +689,10 @@ header .search-bar-container label:hover{
   }
 
   .nav-container .logo {
-    position: absolute;
-    right: 20px;
-    z-index: 1000;
+    /* position: absolute; */
+    /* right: 20px; */
+    /* z-index: 1000; */
+    display: flex;
   }
 
   .nav-container .logo img {

@@ -7,7 +7,7 @@ if(!empty($_SESSION["id"])){
     $_SESSION['username'] = $row['username'];
 }
 else {
-    header("Location: login.php");
+    // header("Location: index.php");
 }
 ?>
 
@@ -38,14 +38,17 @@ else {
             <label for="hamburger">&#9776;</label>
             <input type="checkbox" id="hamburger" />
             <div class="logo">
-                <h3>Hello!</h3>
+                <h3>Hello
                 <?php
-                if($id = $_SESSION["id"]) {
-                    echo $_SESSION['username'];
+                if(!empty($_SESSION["id"])) {
+                    $nama = $_SESSION['username'];
+                    echo "<p class='nama_user'>$nama</p>";
                 }else {
-                    echo "<p style='display:hidden;'>tet tot</p>";
+                    echo "<p class='nama_user'>tet tot</p>";
                 }
                 ?>
+                </h3>
+
             </div>
             <nav>
                 <ul>
@@ -53,10 +56,20 @@ else {
                     <li><a href="packages.php">Packages</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#review">Review</a></li>
-                    <li><a href="#aboutus">About Us</a></li>
+                    <li><a href="#aboutus">About</a></li>
                     <li><a href="contact.php">Contact</a></li>
                     <li><a href="booking.php">Booking</a></li>
-                    <li><a href="login.php">Login</a></li>
+                    <li>
+                    <?php
+                        if(!empty($_SESSION["id"])) {
+                            $nama = $_SESSION['username'];
+                            echo "<a href='profile.php'>$nama</a>";
+                        }else {
+                            echo "<a href='login.php'>Login</a>";
+                        }
+                    ?>
+                    </li>
+                    <!-- <li><a href="login.php">Login</a></li> -->
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
@@ -92,7 +105,6 @@ else {
         </h1>
 
         <div class="box-container">
-
             <div class="box">
                 <img src="images/bajo.jpg" alt="">
                 <div class="content">
@@ -114,7 +126,7 @@ else {
             </div>
 
             <div class="box">
-                <img src="images/nusa.jpg" alt="">
+                <img src="images/kapal.jpg" alt="">
                 <div class="content">
                     <h3> <i class="fas fa-map-marker-alt"></i> Nusa Penida </h3>
                     <p>Nusa Penida is an island southeast of Indonesia's island Bali that includes the neighbouring
@@ -152,10 +164,9 @@ else {
             <div id="loadMore">
                 <a href="packages.html" class="btn ">Load More</a>
             </div>
-           
-</div>
-
+        </div>
     </section>
+
     <!-- packages section ends -->
 
     <!-- services section starts  -->

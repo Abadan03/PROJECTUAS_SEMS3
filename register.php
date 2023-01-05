@@ -1,31 +1,25 @@
-<?php
-include './controllers/config.php';
-if(!empty($_SESSION["id"])){
-    $id = $_SESSION["id"];
-    $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE id = '$id'");
-    $row = mysqli_fetch_assoc($result);
-    $_SESSION['username'] = $row['username'];
-}
-else {
-    header("Location: login.php");
-}
-?>
+
 
 <?php
 include './controllers/config.php';
+
+$randomAuthkey = rand(1000, 3000);
+$authkeyint = intval($randomAuthkey);
+// echo $authKeyint;
 if(isset($_POST['submit'])) {
     $nama = $_POST['nama'];
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirm = $_POST['confirm'];
+    $authkey = $randomAuthkey;
+    $password = md5($_POST['password']);
+    $confirm = md5($_POST['confirm']);
     $duplicate = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$username' OR email = '$email'");
     if(mysqli_num_rows($duplicate) > 0) {
         echo
             "<h1>Username or Email has already Taken!</h1>";
     }else {
         if($password == $confirm) {
-            $query = "INSERT INTO `tb_user`(`id`, `nama`, `username`, `email`, `password`) VALUES ('','$nama','$username','$email','$password')";
+            $query = "INSERT INTO `tb_user`(`id`, `nama`, `username`, `email`, `password`, `authkey`) VALUES ('','$nama','$username','$email','$password', '$authkey')";
             mysqli_query($conn,$query);
             // return Redirect('/index.php');
             echo "<script>alert('Registration Succeed')</script>";
@@ -70,7 +64,7 @@ if(isset($_POST['submit'])) {
                 <label>Password</label>
             </div>
             <div class="txt-field">
-                <input type="password" id="password" name="confirm" required>
+                <input type="password" id="confirmPassword" name="confirm" required>
                 <label>Confirm Password</label>
             </div>
             <div class="pass">

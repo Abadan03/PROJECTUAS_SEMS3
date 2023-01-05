@@ -19,7 +19,7 @@
 body {
     height: 100vh;
     overflow: hidden;
-    background-image: linear-gradient(rgba(32, 126, 233, 0.416), rgba(255, 255, 255, 0.881)), url('bg.jpg');
+    background-image: linear-gradient(rgba(32, 126, 233, 0.416), rgba(255, 255, 255, 0.881)), url('../images/bukit.jpg');
     background-size: cover;
 }
 
