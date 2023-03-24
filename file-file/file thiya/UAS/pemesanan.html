@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isi Data Diri</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style3.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container">
+        <!-- Hero  -->
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Pemesanan Tiket</h1>
+            </div>
+        </div>
+        <!-- End Hero  -->
+
+        <div class="menu">
+            <button><a href="jadwal_penerbangan.html">Jadwal</a></button>
+            <button><a href="pemesanan.html">Pemesanan</a></button>
+            <button><a href="pesanan_saya.html">Pesanan Saya</a></button>
+            <button><a href="batalkan_tiket.html">Batalkan Tiket</a></button>
+        </div>
+
+        <div class="center">
+            <h3>Data Pemesan</h3>
+            <form id="form-login" name="form-login">
+                <div class="txt-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="username" required>
+                    <label>Nama Lengkap</label>
+                </div>
+                <div class="txt-field">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="text" id="password" required>
+                    <label>No. Handphone</label>
+                </div>
+                <div class="txt-field">
+                    <i class="fa-sharp fa-solid fa-envelope"></i>
+                    <input type="text" id="password" required>
+                    <label>Email</label>
+                </div>
+                <!-- <div class="pass">Forgot Password?</div>
+                <button type="submit" form="form-login">Login</button> -->
+            </form>
+        </div>
+        <div class="center-2">
+            <h3>Data Penumpang</h3>
+            <form id="form-login" name="form-login">
+                <div class="select-box">
+                    <h5>Titel</h5>
+                    <div class="travel-select-icon">
+                        <select class="form-control ">
+                                <option value="default">Nyonya</option>
+                                <option value="Nona">Nona</option>
+                                <option value="Tn">Tn</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="txt-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="username" required>
+                    <label>Nama Lengkap</label>
+                </div>
+                <!-- <div class="pass">Forgot Password?</div>
+                <button type="submit" form="form-login">Login</button> -->
+            </form>
+        </div>
+        <div class="btn">
+            <button type="submit" form="form-login">Pesan Sekarang</button>
+        </div>
+</body>
+</html>

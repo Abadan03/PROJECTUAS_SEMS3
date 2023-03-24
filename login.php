@@ -1,28 +1,3 @@
-<?php
-include './controllers/config.php';
-if(isset($_POST['submit'])){
-    $username = $_POST['username'];
-    $password = md5($_POST['password']);
-    $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$username' OR email = '$username' AND password = '$password'");
-    // $check = mysqli_query($conn, "SELECT * FROM tb_user WHERE password = '$password'");
-    // $checkauthkey= mysqli_query($conn, "SELECT * FROM tb_user WHERE authkey = authkey");
-    $row = mysqli_fetch_assoc($result);
-    if(mysqli_num_rows($result) > 0) {
-        // if(mysqli_num_rows($check) > 0) {
-            // if();
-        $_SESSION['login'] = true;
-        $_SESSION['id'] = $row["id"];
-        $_SESSION['authkey'] = $row['authkey'];
-        header("Location: index.php");
-        // }else {
-        //     "<script>alert('Password Does Not Match')</script>";
-        // }
-    }else {
-        echo
-            "<script>alert('User Not Registered')</script>";
-    }
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,13 +15,13 @@ if(isset($_POST['submit'])){
 <body>
     <div class="center">
         <h1>Login</h1>
-        <form id="form-login" method="post" name="form-login">
+        <form  action="cek_login.php" id="form-login" method="post" name="form-login">
             <div class="txt-field">
-                <input type="text" name="username" id="username" required>
+                <input type="text" name="username" id="username" >
                 <label>Username or Email</label>
             </div>
             <div class="txt-field">
-                <input type="password" name="password" id="password" autocomplete="on" required>
+                <input type="password" name="password" id="password" autocomplete="on">
                 <label>Password</label>
             </div>
             <div class="pass">
@@ -54,14 +29,13 @@ if(isset($_POST['submit'])){
                     Doesn't have account yet? Register now.
                 </a>    
             </div>
-            <div class="pass">
-                <a href="admin.php">
-                    Login sebagai admin.
-                </a>    
-            </div>
+            <label id="check"></label>
             <button type="submit" name="submit" form="form-login">Login</button>
         </form>
     </div>
+    <script type="text/javascript">
+        let user = document.getElementById('username')
+        
+    </script>
 </body>
-
 </html>

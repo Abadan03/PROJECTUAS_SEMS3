@@ -1,8 +1,8 @@
 <?php
 include './controllers/config.php';
-if(!empty($_SESSION["id"])){
-    $id = $_SESSION["id"];
-    $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE id = '$id'");
+if(!empty($_SESSION["username"])){
+    $id = $_SESSION["username"];
+    $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$id'");
     $row = mysqli_fetch_assoc($result);
     $_SESSION['username'] = $row['username'];
 }
@@ -84,7 +84,7 @@ else {
         </div>
 
         <div class="box">
-            <img src="images/nusa.jpg" alt="">
+            <img src="images/bukit.jpg" alt="">
             <div class="content">
                 <h3> <i class="fas fa-map-marker-alt"></i> Nusa Penida </h3>
                 <p>Nusa Penida is an island southeast of Indonesia's island Bali that includes the neighbouring

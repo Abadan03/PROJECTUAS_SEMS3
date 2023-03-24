@@ -395,7 +395,7 @@ header .search-bar-container label:hover{
   color:#666;
   font-size: 1.5rem;
 }
-
+/* Services */
 .services .box-container{
   display: flex;
   flex-wrap: wrap;
@@ -409,11 +409,34 @@ header .search-bar-container label:hover{
   text-align: center;
 }
 
-.services .box-container .box i{
+.services .box-container .box img{
   padding:1rem;
   font-size: 5rem;
   color:var(--blue);
 }
+
+.img-logo img{
+  width: 50px !important;
+  
+}
+/* Kode dari athiya untuk gambar logo */
+/* .img-items img{
+  width: 70px;
+}
+*/
+.text-items h1{
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--second-color);
+  /* max-width: 100px; */
+  /* padding: 1rem; */
+}
+.text-items p{
+  /* padding: 1rem; */
+  /* font-size: 10px; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* end */
 
 .services .box-container .box h3{
   font-size: 2.5rem;

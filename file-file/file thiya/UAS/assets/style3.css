@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Maven+Pro&family=Questrial&display=swap');
+
+:root{
+    --blue:#0e678a;
+    --button: #FAA635;
+    --bright-color: #ffffff;
+}
+
+*{
+    font-family: 'Questrial', sans-serif;
+    margin:0; 
+    padding:0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    /* outline: none;  */
+    /* border:none; */
+    text-decoration: none;
+    /* transition: all .2s linear; */
+}
+
+*::selection{
+    /* background:var(--blue); */
+    color:#fff;
+}
+
+/* body {
+    background: linear-gradient(to right,rgba(46, 108, 139, 0.26), rgba(12, 19, 32, 0.281));
+} */
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.hero-container .hero-text {
+    padding: 20px 0;
+}
+
+.menu {
+    padding: 20px 0;
+}
+
+.menu button {
+    padding: 15px;
+    font-size: 15px;
+    background-color: rgba(4, 43, 61, 0.2);
+    font-weight: bold;
+    border: none;
+}
+
+.menu button:hover {
+    opacity: 0.9;
+    transition-duration: 0.4s;
+    background-color: rgba(4, 43, 61, 0.308);
+    color: white;
+}
+
+.menu button a {
+    color: var(--blue);
+}
+
+.center {
+    width: 80%;
+    border: 1px solid rgba(139, 137, 137, 0.313);
+}
+
+.center h3 {
+    /* text-align: center; */
+    padding: 10px 10px;
+    /* border-bottom: 1px solid; */
+    color: var(--dark-color);
+    background: #e3e0e0;
+}
+
+.center form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .txt-field {
+    display: flex;
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt-field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt-field label {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt-field span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--main-color);
+    transition: .5s;
+}
+
+.txt-field input:focus ~ label,
+.txt-field input:valid ~ label {
+    top: -5px;
+    color: var(--main-color);
+}
+
+.txt-field input:focus ~ span::before,
+.txt-field input:valid ~ span::before {
+    width: 100%;
+}
+
+.pass {
+    margin: -5px 0 20px 5px;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.pass:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    right: 20%;
+}
+
+button[type="submit"] {
+    width: 15%;
+    height: 50px;
+    border: 1px solid;
+    background: var(--blue);
+    border-radius: 15px;
+    font-size: 18px;
+    color: var(--bright-color);
+    font-weight: 500;
+    cursor: pointer;
+    overflow: none;
+}
+
+button[type="submit"]:hover {
+    border-color: var(--blue);
+    transition: .5s;
+}
+
+
+/* FORM KEDUA */
+.center-2 {
+    margin: 30px 0;
+    width: 80%;
+    border: 1px solid rgba(139, 137, 137, 0.313);
+}
+
+.center-2 h3 {
+    /* text-align: center; */
+    padding: 10px 10px;
+    /* border-bottom: 1px solid; */
+    color: var(--dark-color);
+    background: #e3e0e0;
+}
+
+.center-2 form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.center-2 .select-box {
+    padding: 20px 0 0 0;
+}
+
+.select-box h5 {
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+.select-box .travel-select-icon .form-control {
+    padding: 8px 18px;
+}
+
+/* @media screen and (max-width: 900px) {
+    .center {
+        margin-top: 15%;
+        margin-left: auto;
+    }
+} */
+

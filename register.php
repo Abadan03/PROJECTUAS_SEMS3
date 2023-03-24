@@ -13,16 +13,17 @@ if(isset($_POST['submit'])) {
     $authkey = $randomAuthkey;
     $password = md5($_POST['password']);
     $confirm = md5($_POST['confirm']);
+    $level = "user";
     $duplicate = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$username' OR email = '$email'");
     if(mysqli_num_rows($duplicate) > 0) {
         echo
             "<h1>Username or Email has already Taken!</h1>";
     }else {
         if($password == $confirm) {
-            $query = "INSERT INTO `tb_user`(`id`, `nama`, `username`, `email`, `password`, `authkey`) VALUES ('','$nama','$username','$email','$password', '$authkey')";
+            $query = "INSERT INTO `tb_user`(`id`, `nama`, `username`, `email`, `password`, `authkey`, `level`) VALUES ('','$nama','$username','$email','$password', '$authkey', '$level')";
             mysqli_query($conn,$query);
             // return Redirect('/index.php');
-            echo "<script>alert('Registration Succeed')</script>";
+            echo "<script>alert('Registration Succeed ')</script>";
         }else {
             echo "<script>alert('Username does not match!)</script>";
         }

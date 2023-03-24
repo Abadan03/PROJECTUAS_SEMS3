@@ -1,14 +1,7 @@
 <?php
+
 include './controllers/config.php';
-if(!empty($_SESSION["id"])){
-    $id = $_SESSION["id"];
-    $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE id = '$id'");
-    $row = mysqli_fetch_assoc($result);
-    $_SESSION['username'] = $row['username'];
-}
-else {
-    // header("Location: index.php");
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -38,39 +31,28 @@ else {
             <label for="hamburger">&#9776;</label>
             <input type="checkbox" id="hamburger" />
             <div class="logo">
-                <h3>Hello
-                <?php
-                if(!empty($_SESSION["id"])) {
-                    $nama = $_SESSION['username'];
-                    echo "<p class='nama_user'>$nama</p>";
-                }else {
-                    echo "<p class='nama_user'>tet tot</p>";
-                }
-                ?>
-                </h3>
-
+                <img src="images2/logo/logo-pw.png" alt="">
             </div>
             <nav>
                 <ul>
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="packages.php">Packages</a></li>
                     <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#review">Review</a></li>
-                    <li><a href="#aboutus">About</a></li>
-                    <li><a href="contact.php">Contact</a></li>
                     <li><a href="booking.php">Booking</a></li>
                     <li>
                     <?php
-                        if(!empty($_SESSION["id"])) {
-                            $nama = $_SESSION['username'];
-                            echo "<a href='profile.php'>$nama</a>";
+                        if(!empty($_SESSION["level"]) == 'user' ) {
+                            $nama = $_SESSION["username"];
+							
+                            echo "<a href='views/profile.php'>$nama</a>";
+                            // echo "$nama";
                         }else {
                             echo "<a href='login.php'>Login</a>";
                         }
                     ?>
                     </li>
                     <!-- <li><a href="login.php">Login</a></li> -->
-                    <li><a href="logout.php">Logout</a></li>
+                    <!-- <li><a href="logout.php">Logout</a></li> -->
                 </ul>
             </nav>
         </header>
@@ -83,7 +65,7 @@ else {
     <section class="home" id="home">
 
         <div class="content">
-            <h3>Let's Sail Away With Us !</h3>
+            <h3>Let's Fly Away With Us !</h3>
             <p>
                 <a href="booking.php" class="tombol">BOOK NOW</a>
             </p>
@@ -101,7 +83,7 @@ else {
     <section class="packages" id="packages">
 
         <h1 class="heading">
-            <span>Packages</span>
+            <span>Informasi Tiket</span>
         </h1>
 
         <div class="box-container">
@@ -121,7 +103,18 @@ else {
                         <i class="far fa-star"></i>
                     </div>
                     <div class="price"> Rp.20.000.000 <span>/night</span> </div>
-                    <a href="booking.html" class="btn">Book now</a>
+                    <?php
+          
+                    if(!empty($_SESSION["username"])) {
+                        $nama = $_SESSION["username"];
+
+                    //   echo "$nama";
+                        echo "<a href='views/showdata.php' class='btn'>Book Now</a>";
+                    }else {
+                        echo "<a href='login.php' class='btn'>Book Now</a>";
+                    }
+
+                    ?>
                 </div>
             </div>
 
@@ -139,7 +132,18 @@ else {
                         <i class="far fa-star"></i>
                     </div>
                     <div class="price"> Rp.17.000.000 <span>/night</span></div>
-                    <a href="booking.html" class="btn">Book now</a>
+                    <?php
+          
+                    if(!empty($_SESSION["username"])) {
+                        $nama = $_SESSION["username"];
+
+                    //   echo "$nama";
+                        echo "<a href='views/showdata.php' class='btn'>Book Now</a>";
+                    }else {
+                        echo "<a href='login.php' class='btn'>Book Now</a>";
+                    }
+
+                    ?>
                 </div>
             </div>
 
@@ -158,11 +162,19 @@ else {
                         <i class="far fa-star"></i>
                     </div>
                     <div class="price">Rp.13.000.000 <span>/night</span> </div>
-                    <a href="booking.html" class="btn">Book now</a>
+                    <?php
+          
+                    if(!empty($_SESSION["username"])) {
+                        $nama = $_SESSION["username"];
+
+                    //   echo "$nama";
+                        echo "<a href='views/showdata.php' class='btn'>Book Now</a>";
+                    }else {
+                        echo "<a href='login.php' class='btn'>Book Now</a>";
+                    }
+
+                    ?></div>
                 </div>
-            </div>
-            <div id="loadMore">
-                <a href="packages.html" class="btn ">Load More</a>
             </div>
         </div>
     </section>
@@ -174,49 +186,45 @@ else {
     <section class="services" id="services">
 
         <h1 class="heading">
-            <span>services</span>
+            <span>Mengapa Memesan Di Airplane Ticket?</span>
         </h1>
 
         <div class="box-container">
             <div class="box">
-                <i class="fas fa-ship"></i>
-                <h3> Yatch with ocean View</h3>
+                <div class="img-logo">
+                    <img src="images2/services/icon1.jpg" style="max-width: 95px;" alt="">
+                </div>
+                <div class="text-items">
+                    <h3>Layanan Terpecaya</h3>
+                    <p>Anda akan mendapatkan layanan yang aman dan terpercaya</p>
+                </div>
             </div>
             <div class="box">
-                <i class="fas fa-couch"></i>
-                <h3>Sundeck and
-                    <br> Around Sofa
-                </h3>
+                <div class="img-logo">
+                    <img src="images2/services/icon2.jpg" style="max-width: 95px;" alt="">
+                </div>
+                <div class="text-items">
+                    <h3>Praktis dan cepat</h3>
+                    <p>Dapat diakses dimana saja dengan cepat dan dapat memesan tiket secara langsung</p>
+                </div>
             </div>
             <div class="box">
-                <i class="fas fa-utensils"></i>
-                <h3>food and drinks</h3>
+                <div class="img-logo">
+                    <img src="images2/services/icon3.png" style="max-width: 95px;" alt="">
+                </div>
+                <div class="text-items">
+                    <h3>lihat kota-kota sekitar</h3>
+                    <p>Anda bisa memesan tiket multi kota untuk keliling indonesia </p>
+                </div>
             </div>
             <div class="box">
-                <i class="fas fa-swimmer"></i>
-                <h3>Diving</h3>
-            </div>
-            <div class="box">
-                <i class="fas fa-bed"></i>
-                <h3>Luxury room</h3>
-            </div>
-            <div class="box">
-                <i class="fas fa-hot-tub"></i>
-                <h3>Jacuzzi on
-                    <br> front deck
-                </h3>
-            </div>
-            <div class="box">
-                <i class="fas fa-glass-cheers"></i>
-                <h3> Mini Bar</h3>
-            </div>
-            <div class="box">
-                <i class="fas fa-bullhorn"></i>
-                <h3> Safty Guide</h3>
-            </div>
-            <div class="box">
-                <i class="fas fa-bath"></i>
-                <h3> Private Bathroom</h3>
+                <div class="img-logo">
+                    <img src="images2/services/icon5.png" style="max-width: 95px;" alt="">
+                </div>
+                <div class="text-items">
+                    <h3>Pesan Tanpa Repot</h3>
+                    <p>dapatkan pelayanan lebih cepat saat berpergian mendadak</p>
+                </div>
             </div>
         </div>
     </section>
@@ -387,7 +395,7 @@ else {
             </div>
         </div>
     </section>
-    <section class="contact" id="contact">
+    <!-- <section class="contact" id="contact">
 
         <h1 class="heading">
             <span>contact</span>
@@ -414,7 +422,7 @@ else {
 
         </div>
 
-    </section>
+    </section> -->
 
     <!-- contact section ends -->
 

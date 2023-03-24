@@ -1,9 +1,10 @@
 <?php
+
 session_start();
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$dbname = "final_project";
+$dbname = "test123";
 
 
 $conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);

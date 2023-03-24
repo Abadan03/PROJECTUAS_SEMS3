@@ -1,0 +1,33 @@
+
+var swiper = new Swiper(".review-slider", {
+    spaceBetween: 20,
+    loop:true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        640: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        }
+    },
+});
+
+const burger = document.querySelector('.burger')
+const sidebar = document.querySelector('.sidebar')
+const bgSidebar = document.querySelector('.bg-sidebar')
+
+burger.addEventListener('click', function() {
+    this.classList.toggle('change')
+    sidebar.classList.toggle('change')
+    bgSidebar.classList.toggle('change')
+})
+
+bgSidebar.addEventListener('click', function() {
+    this.classList.remove('change')
+    sidebar.classList.remove('change')
+    burger.classList.remove('change')
+})

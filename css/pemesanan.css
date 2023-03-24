@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Maven+Pro&family=Questrial&display=swap');
+
+:root{
+    --blue:#0e678a;
+    --button: #FAA635;
+    --bright-color: #ffffff;
+}
+
+*{
+    font-family: 'Questrial', sans-serif;
+    margin:0; 
+    padding:0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+/* navbar */
+.navbar{
+    background-color: #0e678a97;
+}
+.navbar-brand{
+    width: 180px;
+    height: 70px;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    margin-right: 25px;
+    font-weight: 600;
+}
+
+/* button */
+.btn{
+    text-transform: uppercase;
+    border-radius: 10px;
+    background-color: #FAA635;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+.button-search{
+    height: 40px;
+    width: 160px;
+    border-radius: 10px;
+    margin: 30px 0px 0px 0px;
+    background-color: #FAA635;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+/* form-pemesanan */
+.row-out{
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.form-pemesanan{
+    box-shadow: 0 3px 20px rgba(0,0,0,0.5);
+    border-radius: 12px;
+    margin-top: -100px;
+    background-color: #FFFFFF;
+    padding: 50px;
+}
+.tittle-travel{
+    display: flex;
+}
+.tittle-travel img{
+    width: 40px;
+    height: 40px;
+    margin:0px 0px 50px 0px;
+}
+.tittle-travel h3{
+    font-weight: bold;
+    margin:0px 0px 20px 10px;
+    font-size: 30px;
+}
+.travel-select h3{
+    font-size: 20px;
+    color: #656565;
+}
+/* banner-- in the banner section I use the jumbotron  */
+.jumbotron{
+    background-color:var(--blue);
+    height: 350px;
+    text-align: left;
+}
+.jumbotron .display-4{
+    color: #FFFFFF;
+    margin-top: 25px;
+    font-size: 25px;
+    font-weight: 600;
+    /* display: ; */
+}
+.jumbotron p{
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+
+/* .hasil_data {
+    margin:0;
+} */
+
+/* hamburger icon */
+/* .menu-toggle{
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+}
+
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    left: 83%;
+    top: 35px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: rgb(93, 142, 190);
+    border-radius: 3px;
+    position: relative;
+} */
+
+
+/* responsive */
+/* ukuran desktop */
+@media (min-width: 992px) { 
+    .nav-link{
+        text-transform: uppercase;
+        margin-right: 25px;
+    }
+    .nav-link:hover{
+        border-bottom: 2px solid #0B63DC;
+    }
+    .jumbotron .display-4{
+        font-size: 40px;
+    }
+    .jumbotron p{
+        font-size: 25px;
+    }
+    .button-search{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .tittle-travel img{
+        width: 40px;
+        height: 40px;
+    }
+    .tittle-travel h3{
+        font-weight: bold;
+        margin:0px 0px 50px 10px;
+    }
+    .travel-select{
+        margin: 40px 0px 10px 0px;
+    }
+    .form-select{
+        width: 300px;
+        height: 35px;
+    }
+    .form-control{
+        width: 300px;
+        height: 35px;
+    }
+}
+/* ukuran tablet */
+@media screen and (max-width: 768px){
+    .tittle-travel h3{
+        font-weight:800;
+        margin:0px 0px 50px 10px;
+        font-size: 20px;
+    }
+    .tittle-travel img{
+        width: 50px;
+        height: 50px;
+    }
+}
+/* ukuran mobile */
+@media screen and (max-width: 576px){
+    .tittle-travel h3{
+        font-weight:800;
+        margin:0px 0px 50px 10px;
+        font-size: 20px;
+    }
+    .tittle-travel img{
+        width: 50px;
+        height: 50px;
+    }
+    .tittle-travel h3{
+        font-weight:800;
+        margin:0px 0px 50px 10px;
+        font-size: 20px;
+    }
+    .travel-select h3{
+        margin: 14px 0px 10px 0px;
+        font-size: 18px;
+    }
+}
